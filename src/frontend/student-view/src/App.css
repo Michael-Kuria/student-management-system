@@ -1,0 +1,227 @@
+.app{
+  height: 100vh;
+}
+
+/* Header starts here */
+.main-nav{
+  background-color: #2596BE;
+  color: #ffff;
+  font-weight: bold;
+  padding: 1.2rem;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  font-size: 2rem;
+}
+
+.link-container .link{
+  text-decoration: none;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.link-container{
+  display: flex;
+  gap:1rem;
+  height: 100%;
+}
+
+.link-container .link::after{
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #ffff;
+
+
+}
+
+.link-container .link:hover::after {
+  width: 100%;
+  transition: width 1s;
+  transition-timing-function: ease-in-out;
+}
+
+/* home starts here */
+.home-container{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.home-image{
+  width: 100%;
+  height: 350px;
+  background-color: #dddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-image: url(/public/school.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+.home-description-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-description-welcome, .home-description-school{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.home-description-school{
+  color: #2596BE;
+
+}
+
+.home-description-school::after{
+  content: "";
+  display: block;
+  height: 10px;
+  width: 30%;
+  background-color: #2596BE;
+  margin-top: .5rem;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* Students page starts here */
+.students-container{
+  margin: 1rem;
+  height: 100%;
+}
+
+.info-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.students-number{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #66B6D2;
+  border-radius: 5px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.students-number-value{
+  font-size: 2rem;
+}
+
+.info-container button{
+  background-color: #66B6D2;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-weight: bold;
+  border: 1px solid #dddd;
+  border-radius: 5px;
+
+}
+.info-container button:hover{
+  background-color: #2596BE;
+  color: #ffff;
+}
+
+.table-container{
+  width: 100%;
+  align-content: center;
+}
+
+.table-container table{
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  margin-top: 2rem;
+
+}
+
+.table-container thead{
+  background-color: #66B6D2;
+  color: #fff;
+  text-align: left;
+  
+}
+
+.table-container tbody, thead{
+  border-left:1px solid #66B6D2;
+  border-right:1px solid #66B6D2;
+}
+
+.table-container th{
+  padding-top: 1rem ;
+  padding-bottom: 1rem;
+}
+
+.table-container td{
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.table-container tr:nth-child(even){
+  background-color: #dddd;
+}
+
+.table-container tr{
+  border-bottom: 1px solid #66B6D2;
+}
+
+.table-container tr:last-child{
+  border-bottom: 5px solid #66B6D2;
+
+}
+
+
+
+
+/* Footer Starts here  */
+.footer-main{
+  /*position: absolute;*/
+  background-color: #92CBDF;
+  margin-top: 2rem;
+  color: #ffff;
+  /*bottom: 0px;*/
+  width: 100%;
+
+}
+
+.footer-container span{
+  display: block;
+}
+
+
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+
+.footer-title{
+  font-weight: bold;
+  margin-bottom: .7rem;
+}
+
