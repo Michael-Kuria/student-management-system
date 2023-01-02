@@ -27,7 +27,8 @@ public class StudentController {
 
     @PostMapping
     public void addStudent(@Valid @RequestBody Student std){
-            studentService.addStudent(std);
+        System.out.println(std.getFirstName() +" is added");
+        studentService.addStudent(std);
     }
 
     /**

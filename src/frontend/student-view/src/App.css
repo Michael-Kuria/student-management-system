@@ -132,7 +132,7 @@
   font-size: 2rem;
 }
 
-.info-container button, .drawer-form button, .drawer-close-btn{
+.drawer-form button{
   background-color: #2596BE;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -144,7 +144,7 @@
   color: #fff;
 
 }
-.info-container button:hover, .drawer-form button:hover, .drawer-close-btn:hover{
+.drawer-form button:hover, .drawer-close-btn:hover{
   background-color: #66B6D2;
   color: black;
 }
@@ -194,6 +194,27 @@
 
 .table-container tr:last-child{
   border-bottom: 5px solid #66B6D2;
+
+}
+
+
+.btn-container{
+  display:flex;
+  gap: .5rem;
+}
+
+.table-btn, .drawer-close-btn, .add-student-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #66B6D2;
+  border-radius: 5px;
+
+}
+.table-btn:hover, .drawer-close-btn:hover, .add-student-btn:hover{
+  background-color: #66B6D2;
+  color: #fff;
 
 }
 
@@ -255,6 +276,10 @@
 .drawer-form input:focus{
   outline: none;
   border: 2px solid #dddd;
+}
+
+.drawer-form button{
+  width: 100%;
 }
 
 .drawer-form{

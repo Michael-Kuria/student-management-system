@@ -39,6 +39,11 @@ public class StudentService {
     }
 
     public void updateStudent(Student std){
+        /*Student rst = studentRepository.findById(std.getId()).get();
+
+        rst.setFirstName(std.getFirstName());
+        rst.setEmail(std.getEmail());
+        rst.setLastName(std.getLastName());*/
 
         studentRepository.save(std);
     }
@@ -47,7 +52,7 @@ public class StudentService {
         Optional<Student> rst = studentRepository.findById(id);
 
         if(!rst.isPresent()){
-            throw new BadRequestException("Student with request id does not exist");
+            throw new BadRequestException("Student with request id does not exist " + id);
         }
         studentRepository.deleteById(id);
     }
