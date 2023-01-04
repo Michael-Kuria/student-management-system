@@ -1,17 +1,38 @@
-import React, { useRef, useState } from "react";
-import { addNewStudent, deleteStudent, editStudent } from "../client/Client";
+import React, { useRef, useState, useEffect } from "react";
+import { addNewStudent, deleteStudent, editStudent, getAllStudents} from "../client/Client";
 import DeleteForeverRounded from "@mui/icons-material/DeleteForeverRounded";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import CloseIcon from "@mui/icons-material/Close";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 
-export default function Students({ fetchStudents, students, setStudents }) {
+export default function Students() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [studentToEdit, setStudentToEdit] = useState();
-  const [editting, setEditting] = useState(false);
+  const [students, setStudents] =  useState([]);
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
+
+  
+
+  function fetchStudents() {
+    getAllStudents()
+      .then((res) => res.json())
+      .then((students) => {
+        setStudents(students);
+        console.log(students);
+      })
+      .catch((err) => {
+        err.json().then((res) => {
+          console.log(res);
+        });
+      });
+  }
+
+  useEffect(() => {
+    console.log("App is starting up");
+    fetchStudents();
+  }, []);
 
 
   function updateForm(std){
@@ -79,7 +100,6 @@ export default function Students({ fetchStudents, students, setStudents }) {
   }
 
   function handleEditStudent(std, e) {
-    setEditting(true);
     setStudentToEdit(std);
     updateForm(std);
     toggleDrawer();
@@ -99,14 +119,14 @@ export default function Students({ fetchStudents, students, setStudents }) {
           fetchStudents();
           setStudentToEdit(null);
           updateForm(null);
-          setEditting(false);
+          toggleDrawer();
         })
         .catch((err) => {
           err.json().then((res) => {
             console.log(res);
             setStudentToEdit(null);
             updateForm(null);
-            setEditting(false);
+            toggleDrawer();
           });
         });
   }

@@ -169,23 +169,32 @@
   
 }
 
+
 .table-container tbody, thead{
   border-left:1px solid #66B6D2;
   border-right:1px solid #66B6D2;
+  padding: 1rem;
 }
 
 .table-container th{
   padding-top: 1rem ;
   padding-bottom: 1rem;
+  padding-left: .4rem;
 }
 
 .table-container td{
   padding-top: .5rem;
   padding-bottom: .5rem;
+  padding-left: .5rem;
 }
 
 .table-container tr:nth-child(even){
   background-color: #dddd;
+}
+
+
+.table-container tbody tr:hover{
+  background-color: #92CBDF;
 }
 
 .table-container tr{
@@ -213,7 +222,7 @@
 
 }
 .table-btn:hover, .drawer-close-btn:hover, .add-student-btn:hover{
-  background-color: #66B6D2;
+  background-color: #2596BE;
   color: #fff;
 
 }

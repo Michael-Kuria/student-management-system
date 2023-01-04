@@ -2,33 +2,10 @@ import "./App.css";
 import Home from "./components/Home";
 import Students from "./components/Students";
 import About from "./components/About";
-import { getAllStudents } from "./client/Client";
 import { Routes, Route, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 function App() {
-  const [students, setStudents] = new useState([
-    { firstName: "Michael", lastName: "Kuria", email: "What@gamil.com" },
-  ]);
-
-  function fetchStudents() {
-    getAllStudents()
-      .then((res) => res.json())
-      .then((students) => {
-        setStudents(students);
-        console.log(students);
-      })
-      .catch((err) => {
-        err.json().then((res) => {
-          console.log(res);
-        });
-      });
-  }
-
-  useEffect(() => {
-    console.log("App is starting up");
-    fetchStudents();
-  }, []);
+  
 
   return (
     <div className="app">
@@ -54,9 +31,9 @@ function App() {
           path="/students"
           element={
             <Students
-              fetchStudents={fetchStudents}
+              /*fetchStudents={fetchStudents}
               students={students}
-              setStudents={setStudents}
+              setStudents={setStudents}*/
             />
           }
         ></Route>
