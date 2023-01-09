@@ -1,7 +1,13 @@
 import React from 'react'
+import NotificationProvider from './NotificationProvider'
 
 export default function About() {
   return (
-    <div>About</div>
+    <NotificationProvider>
+      <div>
+        about
+      </div>
+    </NotificationProvider>
+    
   )
 }

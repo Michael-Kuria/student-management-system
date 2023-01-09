@@ -1,9 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { addNewStudent, deleteStudent, editStudent, getAllStudents} from "../client/Client";
+import NotificationProvider from "./NotificationProvider";
 import DeleteForeverRounded from "@mui/icons-material/DeleteForeverRounded";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import CloseIcon from "@mui/icons-material/Close";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+
 
 export default function Students() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -183,6 +185,7 @@ export default function Students() {
           </table>
         </div>
       </div>
+      
 
       <div>
         <div className={`drawer ${isDrawerOpen ? "drawer-active" : ""}`}>
