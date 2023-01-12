@@ -4,6 +4,7 @@ import Students from "./components/Students";
 import About from "./components/About";
 import { Routes, Route, Link } from "react-router-dom";
 
+
 function App() {
   
 
@@ -38,6 +39,7 @@ function App() {
           }
         ></Route>
         <Route path="/about" element={<About />}></Route>
+        
       </Routes>
     </div>
   );

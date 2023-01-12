@@ -352,6 +352,42 @@
   padding-top: 5px;
   padding-bottom: 0;
   overflow: hidden;
+  animation: SlideLeft 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  width: 400px;
+
+}
+
+.notification.exit{
+
+  animation: SlideRight .4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes SlideLeft {
+
+  0% {
+    margin-left: 120%;
+
+  }
+  100%{
+    margin-left : 0%;
+  }
+  
+}
+
+@keyframes SlideRight {
+  0%{
+    margin-left : 0%;
+  }
+
+  100%{
+    margin-left : 120%;
+  }
+  
 }
 
 .notification-info-container{

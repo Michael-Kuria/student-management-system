@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { addNewStudent, deleteStudent, editStudent, getAllStudents} from "../client/Client";
-import NotificationProvider from "./NotificationProvider";
+import NotificationProvider, { useErrorNotification, useSuccessNotification } from "./NotificationProvider";
 import DeleteForeverRounded from "@mui/icons-material/DeleteForeverRounded";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import CloseIcon from "@mui/icons-material/Close";
@@ -14,6 +14,8 @@ export default function Students() {
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
+  const dispatchErrorNotification = useErrorNotification();
+  const dispatchSuccessNotification = useSuccessNotification();
 
   
 
@@ -27,6 +29,7 @@ export default function Students() {
       .catch((err) => {
         err.json().then((res) => {
           console.log(res);
+          dispatchErrorNotification(res);
         });
       });
   }
@@ -79,10 +82,12 @@ export default function Students() {
       .then(() => {
         console.log(std + " has been added");
         fetchStudents();
+        dispatchSuccessNotification(std.firstName +" Added successfully")
       })
       .catch((err) => {
         err.json().then((res) => {
           console.log(res);
+          dispatchErrorNotification(res);
         });
       });
   }
@@ -93,10 +98,12 @@ export default function Students() {
       .then(() => {
         console.log("Student with id " + id + " has been deleted");
         fetchStudents();
+        dispatchSuccessNotification("Student with "+ id +" removed successfully")
       })
       .catch((err) => {
         err.json().then((res) => {
           console.log(res);
+          dispatchErrorNotification(res);
         });
       });
   }
